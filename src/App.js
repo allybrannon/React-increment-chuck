@@ -23,12 +23,14 @@ class App extends React.Component {
         this.setState({
           message: data.value,
         });
+        this._decrementCount = this._decrementCount.bind(this);
       });
   }
   render() {
     return (
       <div className="App">
         <h1>Hello!</h1>
+        <h3>{this.state.message}</h3>
         <Output value={this.state.count} />
         <Increment
           // 3. pass a reference to the helper method as a prop
